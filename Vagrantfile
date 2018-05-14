@@ -6,9 +6,10 @@ Vagrant.configure("2") do |config|
     c.vm.box = "ubuntu/xenial64"
     c.vm.hostname = 'ossec-server'
     c.vm.network "private_network", type: "dhcp"
-    c.vm.provision "shell", path: "install-ossec-repo.sh"
+    c.vm.provision "shell", path: "install-puppet.sh"
     c.vm.provision "puppet" do |puppet|
       puppet.manifest_file = 'server.pp'
+      puppet.module_path = 'modules'
     end
   end
 
