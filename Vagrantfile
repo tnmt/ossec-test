@@ -13,14 +13,16 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  config.vm.define "ossec-agent001" do |c|
-    c.vm.box = "ubuntu/xenial64"
-    c.vm.hostname = 'ossec-agent001'
-    c.vm.network "private_network", type: "dhcp"
-    c.vm.provision "shell", path: "install-puppet.sh"
-    c.vm.provision "puppet" do |puppet|
-      puppet.manifest_file = 'agent.pp'
-      puppet.module_path = 'modules'
+  [1,2].each do |i|
+    config.vm.define "ossec-agent00#{i}" do |c|
+      c.vm.box = "ubuntu/xenial64"
+      c.vm.hostname = "ossec-agent00#{i}"
+      c.vm.network "private_network", type: "dhcp"
+      c.vm.provision "shell", path: "install-puppet.sh"
+      c.vm.provision "puppet" do |puppet|
+        puppet.manifest_file = 'agent.pp'
+        puppet.module_path = 'modules'
+      end
     end
   end
 end
