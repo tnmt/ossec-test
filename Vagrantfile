@@ -1,6 +1,7 @@
 Vagrant.configure("2") do |config|
 
   config.vm.box = "bento/centos-7.3"
+  config.vm.provision "shell", path: "install-puppet.sh"
 
   config.vm.define "ossec-server" do |c|
     c.vm.hostname = 'ossec-server'
