@@ -1,39 +1,34 @@
 FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
-    puppet-archive (3.0.0)
+    puppet-nodejs (5.0.0)
       puppetlabs-stdlib (< 5.0.0, >= 4.13.1)
     puppet-selinux (1.5.2)
       puppetlabs-stdlib (< 5.0.0, >= 4.13.1)
-    puppet-staging (3.2.0)
     puppetlabs-apt (4.5.1)
       puppetlabs-stdlib (< 5.0.0, >= 4.16.0)
-    puppetlabs-chocolatey (3.0.0)
-      puppetlabs-powershell (< 3.0.0, >= 1.0.1)
-      puppetlabs-registry (< 3.0.0, >= 1.0.0)
-      puppetlabs-stdlib (< 5.0.0, >= 4.6.0)
     puppetlabs-concat (4.2.1)
       puppetlabs-stdlib (< 5.0.0, >= 4.13.1)
-    puppetlabs-mysql (5.3.0)
-      puppet-staging (< 4.0.0, >= 1.0.1)
-      puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
-      puppetlabs-translate (< 2.0.0, >= 1.0.0)
-    puppetlabs-powershell (2.1.5)
-    puppetlabs-registry (2.0.1)
+    puppetlabs-firewall (1.12.0)
+      puppetlabs-stdlib (< 5.0.0, >= 4.0.0)
     puppetlabs-stdlib (4.25.1)
-    puppetlabs-translate (1.1.0)
     stahnma-epel (1.3.0)
       puppetlabs-stdlib (>= 3.0.0)
-    wazuh-ossec (2.0.22)
-      puppet-archive (>= 0)
+
+GIT
+  remote: https://github.com/tnmt/wazuh-puppet.git
+  ref: fix-metadata
+  sha: 6944bd52e97d1fc8e94f6b0b65cd5d690659f7ed
+  specs:
+    wazuh-wazuh (2.0.22)
+      puppet-nodejs (>= 0)
       puppet-selinux (>= 0)
       puppetlabs-apt (>= 0)
-      puppetlabs-chocolatey (>= 0)
       puppetlabs-concat (>= 0)
-      puppetlabs-mysql (>= 0)
+      puppetlabs-firewall (>= 0)
       puppetlabs-stdlib (>= 0)
       stahnma-epel (>= 0)
 
 DEPENDENCIES
-  wazuh-ossec (>= 0)
+  wazuh-wazuh (>= 0)
 

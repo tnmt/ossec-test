@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-forge "https://forgeapi.puppetlabs.com"
+forge "https://forge.puppetlabs.com"
 
-mod 'wazuh-ossec'
+mod 'wazuh-wazuh', :git => 'https://github.com/tnmt/wazuh-puppet.git', :branch => 'fix-metadata'
