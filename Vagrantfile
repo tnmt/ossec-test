@@ -8,6 +8,7 @@ Vagrant.configure("2") do |config|
     c.vm.provision "puppet" do |puppet|
       puppet.manifest_file = 'server.pp'
       puppet.module_path = 'modules'
+      puppet.options = "--verbose --debug"
     end
   end
 
@@ -18,6 +19,7 @@ Vagrant.configure("2") do |config|
       c.vm.provision "puppet" do |puppet|
         puppet.manifest_file = 'agent.pp'
         puppet.module_path = 'modules'
+        puppet.options = "--verbose --debug"
       end
     end
   end
