@@ -3,7 +3,7 @@
 set -eu
 [[ $UID -ne 0 ]] && exec sudo "$BASH_SOURCE"
 
-ensure_version=5.5.1
+ensure_version=6.0.0
 
 if ! rpm -q puppet-release; then
     os_release=$(awk '{print gensub(/.+ ([0-9])\.[0-9].+/, "\\1", "")}' /etc/redhat-release)
