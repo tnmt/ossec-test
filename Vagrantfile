@@ -13,9 +13,8 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  [1,2].each do |i|
-    config.vm.define "ossec-agent00#{i}" do |c|
-      c.vm.hostname = "ossec-agent00#{i}"
+    config.vm.define "ossec-agent001" do |c|
+      c.vm.hostname = "ossec-agent001"
       c.vm.network "private_network", type: "dhcp"
       c.vm.provision "puppet" do |puppet|
         puppet.manifest_file = 'agent.pp'
@@ -23,5 +22,4 @@ Vagrant.configure("2") do |config|
         puppet.options = "--verbose --debug"
       end
     end
-  end
 end
